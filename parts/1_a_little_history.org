@@ -1,0 +1,6 @@
+* Prelude
+  :PROPERTIES:
+  :reveal_extra_attr: data-state="no-toc-progress" class="center"
+  :html_headline_class: sectitle
+  :END:
+  {{{secname(A little history)}}}

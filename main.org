@@ -1,0 +1,26 @@
+# Local IspellDict: en
+#+STARTUP: showeverything
+#+SPDX-FileCopyrightText: 2020 Jeremy Thurgood
+#+SPDX-License-Identifier: CC-BY-SA-4.0
+
+# Apply standard settings of oer-reveal.
+#+INCLUDE: "~/.emacs.d/oer-reveal-org/config.org"
+
+#+REVEAL_THEME: jerith
+#+REVEAL_TITLE_SLIDE: title-slide.html
+#+REVEAL_EXTRA_ATTR: data-state="no-toc-progress"
+#+OPTIONS: reveal_center:nil
+
+# Some macros that I've found to be useful.
+#+MACRO: EMPTY
+#+MACRO: h @@html:<h$1>@@$2@@html:</h$1>@@
+#+MACRO: secname {{{BR}}}{{{h(2,$1)}}}
+
+
+#+TITLE: Trio
+#+SUBTITLE: Structured Concurrency {{{BR}}} for Python
+#+AUTHOR: Jeremy Thurgood
+#+DATE: PyConZA 2020
+
+
+#+INCLUDE: "parts/1_a_little_history.org"
