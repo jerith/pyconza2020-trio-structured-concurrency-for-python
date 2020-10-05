@@ -12,7 +12,7 @@ To generate the presentation, install emacs-reveal as per its documentation and
 then run the following command:
 
 ```
-emacs --batch --load elisp/setup.el --load elisp/publish.el
+emacs --batch --load elisp/publish.el
 ```
 
 ### Licenses

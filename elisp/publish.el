@@ -5,6 +5,8 @@
 ;; SPDX-FileCopyrightText: 2017-2020 Jens Lechtenbörger
 ;; SPDX-License-Identifier: GPL-3.0-or-later
 
+;; Modified by Jeremy Thurgood for the purposes of this project.
+
 ;;; License: GPL-3.0-or-later
 
 ;;; Commentary:
@@ -16,7 +18,7 @@
 ;;
 ;; Use this file from its parent directory with the following shell
 ;; command:
-;; emacs --batch --load elisp/publish.el
+;; `emacs --batch --load elisp/publish.el'
 
 ;;; Code:
 ;; Setup dot.
@@ -37,7 +39,8 @@
 ;; Load emacs-reveal.
 (let ((install-dir
        (mapconcat #'file-name-as-directory
-                  `(,user-emacs-directory "elpa" "emacs-reveal") "")))
+                  ;; Change this to poit to where emacs-reveal is installed.
+                  `(,user-emacs-directory "third-party" "emacs-reveal") "")))
   (add-to-list 'load-path install-dir)
   (condition-case nil
       ;; Either require package with above hard-coded location
@@ -56,10 +59,15 @@
 ;; Publish Org files.
 (oer-reveal-publish-all
  (list
-  (list "jerith-theme"
+  (list "theme-css"
         :base-directory "./css/theme"
         :base-extension 'any
         :publishing-directory "./public/reveal.js/dist/theme"
         :publishing-function 'org-publish-attachment)
-  ))
+  (list "other-css"
+        :base-directory "./css"
+        :base-extension 'any
+        :publishing-directory "./public/reveal.js/dist"
+        :publishing-function 'org-publish-attachment)))
+
 ;;; publish.el ends here

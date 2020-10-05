@@ -4,3 +4,55 @@
   :html_headline_class: sectitle
   :END:
   {{{secname(A little history)}}}
+
+** The era of ~GOTO~
+
+Ten lines:
+
+#+INCLUDE: "../code/1_ten_lines.bas" src basic
+
+#+ATTR_REVEAL: :frag fade-in :frag_idx 1
+Prime Numbers:
+
+#+ATTR_REVEAL: :frag fade-in :frag_idx 1
+#+INCLUDE: "../code/1_primes.bas" src basic
+
+#+BEGIN_NOTES
+- Complex, arbitrary control flow.
+- Close to what the machine actually does.
+- Unrestricted: can jump into middle of loops/procs.
+#+END_NOTES
+
+** Structured programming
+
+Ten lines:
+
+#+INCLUDE: "../code/1_ten_lines.py" src python
+
+#+ATTR_REVEAL: :frag fade-in :frag_idx 1
+Prime Numbers:
+
+#+ATTR_REVEAL: :frag fade-in :frag_idx 1
+#+INCLUDE: "../code/1_primes.py" src python
+
+#+BEGIN_NOTES
+- Structured control flow.
+- Much easier to reason about.
+- Aside: for/else
+#+END_NOTES
+
+** Consequences of structure
+
+{{{BR}}}
+{{{BR}}}
+
+#+ATTR_REVEAL: :frag (fade-in)
+- Call stacks and local variables
+  {{{BR}}}{{{BR}}}
+- Exceptions and error handling
+  {{{BR}}}{{{BR}}}
+- context managers and ~with~ blocks
+
+#+BEGIN_NOTES
+- Getting rid of GOTO entirely lets us have some nice things.
+#+END_NOTES

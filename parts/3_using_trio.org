@@ -1,0 +1,20 @@
+* Development
+  :PROPERTIES:
+  :reveal_extra_attr: data-state="no-toc-progress" class="center"
+  :html_headline_class: sectitle
+  :END:
+  {{{secname(Using Trio)}}}
+
+** Read the docs
+
+{{{BR}}}
+{{{BR}}}
+
+#+ATTR_REVEAL: :frag (none fade-in)
+- https://trio.readthedocs.io/
+  {{{BR}}}{{{BR}}}
+- No, seriously, the docs are excellent
+  {{{BR}}}{{{BR}}}
+- Okay, I'll talk about trio a bit more
+
+# TODO: Finish this section.

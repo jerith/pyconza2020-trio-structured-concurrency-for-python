@@ -11,6 +11,10 @@
 #+REVEAL_EXTRA_ATTR: data-state="no-toc-progress"
 #+OPTIONS: reveal_center:nil
 
+# Syntax highlighting.
+#+REVEAL_PLUGINS: (highlight)
+#+REVEAL_EXTRA_CSS: ./reveal.js/dist/highlight_tomorrow.css
+
 # Some macros that I've found to be useful.
 #+MACRO: EMPTY
 #+MACRO: h @@html:<h$1>@@$2@@html:</h$1>@@
@@ -24,3 +28,6 @@
 
 
 #+INCLUDE: "parts/1_a_little_history.org"
+#+INCLUDE: "parts/2_about_concurrency.org"
+#+INCLUDE: "parts/3_using_trio.org"
+#+INCLUDE: "parts/4_conclusion.org"

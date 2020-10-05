@@ -1,0 +1,71 @@
+* Exposition
+  :PROPERTIES:
+  :reveal_extra_attr: data-state="no-toc-progress" class="center"
+  :html_headline_class: sectitle
+  :END:
+  {{{secname(About concurrency)}}}
+
+** What is concurrency?
+
+{{{BR}}}
+{{{BR}}}
+
+#+ATTR_REVEAL: :frag (strike fade-in)
+- Threads! Promises! Mutexes! Deadlocks!
+  {{{BR}}}{{{BR}}}
+- Multiple independent flows of execution
+  {{{BR}}}{{{BR}}}
+- Communication between flows
+
+#+BEGIN_NOTES
+- T!P!M!D! are all common concurrency-related things.
+- Communication isn't *technically* necessary for concurrency.
+#+END_NOTES
+
+** The era of ~spawn~
+
+#+INCLUDE: "../code/2_spawn.erl" src erlang
+
+(Don't worry too much about the syntax. Erlang is weird.)
+
+#+BEGIN_NOTES
+- ~spawn~ is effectively the ~goto~ of concurrency.
+- Golang even calls it ~go~.
+#+END_NOTES
+
+** asyncio calls it ~create_task~
+
+#+INCLUDE: "../code/2_task_buggy.py" src python
+
+#+ATTR_REVEAL: :frag fade-in :frag_idx 1
+Can you spot both bugs?
+
+** Tasks can be orphaned
+
+#+INCLUDE: "../code/2_task_annotated.py" src python
+
+#+BEGIN_NOTES
+- Coroutines that aren't run may eventually log warnings.
+- Coroutines and tasks can be created anywhere and passed around.
+- No link between spawned task and the code that spawned it.
+#+END_NOTES
+
+** Where do errors go?
+
+#+INCLUDE: "../code/2_errors.py" src python
+
+#+BEGIN_NOTES
+- Exceptions in tasks get reraised by ~await~.
+- Tasks that aren't awaited log errors in ~__del__~.
+- Stack traces can be very confusing and misleading.
+#+END_NOTES
+
+** Structured concurrency
+
+#+INCLUDE: "../code/2_trio.py" src python
+
+#+BEGIN_NOTES
+- Async code cannot escape caller's scope.
+- No more orphans.
+- Stack traces make sense.
+#+END_NOTES

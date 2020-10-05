@@ -1,0 +1,34 @@
+* Coda
+  :PROPERTIES:
+  :reveal_extra_attr: data-state="no-toc-progress" class="center"
+  :html_headline_class: sectitle
+  :END:
+  {{{secname(Conclusion)}}}
+
+** What have we learned?
+
+{{{BR}}}
+{{{BR}}}
+
+#+ATTR_REVEAL: :frag (fade-in)
+- ~goto~ is bad (but we already knew this)
+  {{{BR}}}{{{BR}}}
+- ~spawn~ is bad, no matter how you spell it
+  {{{BR}}}{{{BR}}}
+- Structured Concurrency is great
+  {{{BR}}}{{{BR}}}
+- Use Trio for your next async project
+
+* The end
+  :PROPERTIES:
+  :reveal_extra_attr: data-state="no-toc-progress" class="center"
+  :html_headline_class: sectitle
+  :END:
+  {{{secname(APPLAUSE!!!)}}}
+
+* The end
+  :PROPERTIES:
+  :reveal_extra_attr: data-state="no-toc-progress" class="center"
+  :html_headline_class: sectitle
+  :END:
+  {{{secname(Questions?)}}}
