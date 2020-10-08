@@ -56,6 +56,10 @@
 ;; ;; Add klipse plugin for live code execution.
 ;; (add-to-list 'oer-reveal-plugins "klipse-libs")
 
+;; Stop complaining about this.
+(setq python-indent-guess-indent-offset-verbose nil)
+(setq-default indent-tabs-mode nil)
+
 ;; Publish Org files.
 (oer-reveal-publish-all
  (list

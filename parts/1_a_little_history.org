@@ -18,6 +18,7 @@ Prime Numbers:
 #+INCLUDE: "../code/1_primes.bas" src basic
 
 #+BEGIN_NOTES
+- BASIC: from the 60s and 70s.
 - Complex, arbitrary control flow.
 - Close to what the machine actually does.
 - Unrestricted: can jump into middle of loops/procs.
@@ -27,12 +28,14 @@ Prime Numbers:
 
 Ten lines:
 
+#+ATTR_REVEAL: :code_attribs data-line-numbers
 #+INCLUDE: "../code/1_ten_lines.py" src python
 
 #+ATTR_REVEAL: :frag fade-in :frag_idx 1
 Prime Numbers:
 
 #+ATTR_REVEAL: :frag fade-in :frag_idx 1
+#+ATTR_REVEAL: :code_attribs data-line-numbers
 #+INCLUDE: "../code/1_primes.py" src python
 
 #+BEGIN_NOTES
@@ -47,11 +50,13 @@ Prime Numbers:
 {{{BR}}}
 
 #+ATTR_REVEAL: :frag (fade-in)
+- Execution flow that humans can reason about
+  {{{BR}}}{{{BR}}}
 - Call stacks and local variables
   {{{BR}}}{{{BR}}}
 - Exceptions and error handling
   {{{BR}}}{{{BR}}}
-- context managers and ~with~ blocks
+- Context managers and ~with~ blocks
 
 #+BEGIN_NOTES
 - Getting rid of GOTO entirely lets us have some nice things.

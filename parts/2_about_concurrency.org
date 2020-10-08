@@ -22,36 +22,39 @@
 - Communication isn't *technically* necessary for concurrency.
 #+END_NOTES
 
-** The era of ~spawn~
+** ~spawn~: ~goto~ for concurrency
 
+#+ATTR_REVEAL: :code_attribs data-line-numbers="|3-8|10-13|"
 #+INCLUDE: "../code/2_spawn.erl" src erlang
 
+{{{BR}}}
 (Don't worry too much about the syntax. Erlang is weird.)
 
 #+BEGIN_NOTES
-- ~spawn~ is effectively the ~goto~ of concurrency.
+- Erlang: from the 80s.
 - Golang even calls it ~go~.
 #+END_NOTES
 
 ** asyncio calls it ~create_task~
 
+#+ATTR_REVEAL: :code_attribs data-line-numbers="|3-6|8-13||10|13|" data-fragment-index=0
 #+INCLUDE: "../code/2_task_buggy.py" src python
 
-#+ATTR_REVEAL: :frag fade-in :frag_idx 1
+{{{BR}}}
+
+#+ATTR_REVEAL: :frag fade-in :frag_idx 2
 Can you spot both bugs?
 
-** Tasks can be orphaned
-
-#+INCLUDE: "../code/2_task_annotated.py" src python
-
 #+BEGIN_NOTES
-- Coroutines that aren't run may eventually log warnings.
+- Bug 1: Coroutines that aren't run may eventually log warnings.
+- Bug 2: Tasks that aren't awaited are orphaned.
 - Coroutines and tasks can be created anywhere and passed around.
 - No link between spawned task and the code that spawned it.
 #+END_NOTES
 
 ** Where do errors go?
 
+#+ATTR_REVEAL: :code_attribs data-line-numbers="|8|9,11|10|"
 #+INCLUDE: "../code/2_errors.py" src python
 
 #+BEGIN_NOTES
@@ -62,10 +65,29 @@ Can you spot both bugs?
 
 ** Structured concurrency
 
+#+ATTR_REVEAL: :code_attribs data-line-numbers
 #+INCLUDE: "../code/2_trio.py" src python
 
 #+BEGIN_NOTES
 - Async code cannot escape caller's scope.
-- No more orphans.
-- Stack traces make sense.
+- Will explain more in the next section.
+#+END_NOTES
+
+** Consequences of structure
+
+{{{BR}}}
+{{{BR}}}
+
+#+ATTR_REVEAL: :frag (fade-in)
+- Execution flow that humans can reason about
+  {{{BR}}}{{{BR}}}
+- Nested contexts and task-local state
+  {{{BR}}}{{{BR}}}
+- Well-defined cancellation semantics and error handling
+  {{{BR}}}{{{BR}}}
+- No orphaned tasks or missing results
+
+#+BEGIN_NOTES
+- Getting rid of spawn entirely will let us have some nice things.
+- Unfortunately Python isn't quite there yet.
 #+END_NOTES

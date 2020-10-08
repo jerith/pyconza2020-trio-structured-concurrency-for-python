@@ -50,17 +50,12 @@ html * {
 .reveal .lessspaced li, .reveal .lessspaced p {
   line-height: 1.25; }
 
-.hljs-pythonhl-hl {
-  background-color: #114411;
-  display: inline-block;
-  width: 100%; }
-
-.hljs-pythonhl-dt {
-  display: none; }
+.hljs-ln-numbers {
+  color: #5f5f5f }
 
 .reveal .sectitle {
-    opacity: 0.3;
-    font-size: 1.55em; }
+  opacity: 0.3;
+  font-size: 1.55em; }
 
 /*********************************************
  * GLOBAL STYLES
@@ -243,7 +238,7 @@ html * {
   display: block;
   padding: 5px;
   overflow: auto;
-  max-height: 400px;
+  max-height: 500px;
   word-wrap: normal; }
 
 .reveal table {

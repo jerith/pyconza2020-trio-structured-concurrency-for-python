@@ -6,14 +6,18 @@
 # Apply standard settings of oer-reveal.
 #+INCLUDE: "~/.emacs.d/oer-reveal-org/config.org"
 
+#+OPTIONS: reveal_pdfseparatefragments:t
+#+REVEAL_EXPORT_NOTES_TO_PDF:
+
+
 #+REVEAL_THEME: jerith
 #+REVEAL_TITLE_SLIDE: title-slide.html
 #+REVEAL_EXTRA_ATTR: data-state="no-toc-progress"
-#+OPTIONS: reveal_center:nil
+#+OPTIONS: reveal_center:nil reveal_control:nil
 
 # Syntax highlighting.
-#+REVEAL_PLUGINS: (highlight)
-#+REVEAL_EXTRA_CSS: ./reveal.js/dist/highlight_tomorrow.css
+#+REVEAL_PLUGINS: (notes search zoom highlight)
+#+REVEAL_HIGHLIGHT_CSS: ./reveal.js/dist/highlight_tomorrow.css
 
 # Some macros that I've found to be useful.
 #+MACRO: EMPTY
