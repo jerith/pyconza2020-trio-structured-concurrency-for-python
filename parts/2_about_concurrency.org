@@ -37,17 +37,10 @@
 
 ** asyncio calls it ~create_task~
 
-#+ATTR_REVEAL: :code_attribs data-line-numbers="|3-6|8-13||10|13|" data-fragment-index=0
-#+INCLUDE: "../code/2_task_buggy.py" src python
-
-{{{BR}}}
-
-#+ATTR_REVEAL: :frag fade-in :frag_idx 2
-Can you spot both bugs?
+#+ATTR_REVEAL: :code_attribs data-line-numbers="|3-6|8-13|" data-fragment-index=0
+#+INCLUDE: "../code/2_asyncio.py" src python
 
 #+BEGIN_NOTES
-- Bug 1: Coroutines that aren't run may eventually log warnings.
-- Bug 2: Tasks that aren't awaited are orphaned.
 - Coroutines and tasks can be created anywhere and passed around.
 - No link between spawned task and the code that spawned it.
 #+END_NOTES
@@ -65,17 +58,8 @@ Can you spot both bugs?
 
 ** Structured concurrency
 
-#+ATTR_REVEAL: :code_attribs data-line-numbers
-#+INCLUDE: "../code/2_trio.py" src python
+*Tasks spawned in a block must finish in that block*
 
-#+BEGIN_NOTES
-- Async code cannot escape caller's scope.
-- Will explain more in the next section.
-#+END_NOTES
-
-** Consequences of structure
-
-{{{BR}}}
 {{{BR}}}
 
 #+ATTR_REVEAL: :frag (fade-in)
@@ -83,11 +67,13 @@ Can you spot both bugs?
   {{{BR}}}{{{BR}}}
 - Nested contexts and task-local state
   {{{BR}}}{{{BR}}}
-- Well-defined cancellation semantics and error handling
+- Well-defined cancellation and error handling
   {{{BR}}}{{{BR}}}
 - No orphaned tasks or missing results
 
 #+BEGIN_NOTES
+- Async code cannot escape caller's scope.
+- Will explain more in the next section.
 - Getting rid of spawn entirely will let us have some nice things.
 - Unfortunately Python isn't quite there yet.
 #+END_NOTES

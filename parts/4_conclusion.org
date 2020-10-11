@@ -26,9 +26,6 @@
   :END:
   {{{secname(APPLAUSE!!!)}}}
 
-* The end
-  :PROPERTIES:
-  :reveal_extra_attr: data-state="no-toc-progress" class="center"
-  :html_headline_class: sectitle
-  :END:
-  {{{secname(Questions?)}}}
+** Questions?
+
+{{{reveallicense("./img/4_kormakr.meta",80vh,"figure",none)}}}

@@ -7,20 +7,28 @@
 
 ** The era of ~GOTO~
 
-Ten lines:
-
 #+INCLUDE: "../code/1_ten_lines.bas" src basic
 
-#+ATTR_REVEAL: :frag fade-in :frag_idx 1
-Prime Numbers:
+# #+ATTR_REVEAL: :frag fade-in :frag_idx 1
+{{{reveallicense("./img/1_ten_lines.meta",60vh,"figure fragment fade-in",none)}}}
 
-#+ATTR_REVEAL: :frag fade-in :frag_idx 1
-#+INCLUDE: "../code/1_primes.bas" src basic
+
+# #+ATTR_REVEAL: :frag fade-in :frag_idx 1
+# #+INCLUDE: "../code/1_primes.bas" src basic
 
 #+BEGIN_NOTES
 - BASIC: from the 60s and 70s.
 - Complex, arbitrary control flow.
 - Close to what the machine actually does.
+#+END_NOTES
+
+** More complicated ~GOTO~
+
+#+INCLUDE: "../code/1_primes.bas" src basic
+
+{{{reveallicense("./img/1_primes.meta",50vh,"figure fragment fade-in",none)}}}
+
+#+BEGIN_NOTES
 - Unrestricted: can jump into middle of loops/procs.
 #+END_NOTES
 

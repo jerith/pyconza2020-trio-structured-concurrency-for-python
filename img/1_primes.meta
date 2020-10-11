@@ -1,0 +1,6 @@
+((filename . "./img/1_primes.png")
+ (licenseurl . "https://creativecommons.org/publicdomain/zero/1.0/")
+ (licensetext . "CC0")
+ (dc:source . "")
+ (texwidth . 0.5) ; Width in percent of textwidth for LaTeX export
+)

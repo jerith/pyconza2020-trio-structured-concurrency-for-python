@@ -63,6 +63,11 @@
 ;; Publish Org files.
 (oer-reveal-publish-all
  (list
+  (list "images"
+        :base-directory "./img"
+        :base-extension (regexp-opt '("png"))
+        :publishing-directory "./public/reveal.js/dist/img"
+        :publishing-function 'org-publish-attachment)
   (list "theme-css"
         :base-directory "./css/theme"
         :base-extension 'any

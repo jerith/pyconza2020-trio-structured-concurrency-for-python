@@ -6,7 +6,7 @@
 # Apply standard settings of oer-reveal.
 #+INCLUDE: "~/.emacs.d/oer-reveal-org/config.org"
 
-#+OPTIONS: reveal_pdfseparatefragments:t
+#+OPTIONS: reveal_pdfseparatefragments:nil
 #+REVEAL_EXPORT_NOTES_TO_PDF:
 
 
@@ -34,4 +34,5 @@
 #+INCLUDE: "parts/1_a_little_history.org"
 #+INCLUDE: "parts/2_about_concurrency.org"
 #+INCLUDE: "parts/3_using_trio.org"
+# #+INCLUDE: "parts/3b_bonus_example.org"
 #+INCLUDE: "parts/4_conclusion.org"
